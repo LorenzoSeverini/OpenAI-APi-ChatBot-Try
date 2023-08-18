@@ -12,7 +12,7 @@
 
 const API_URL = "https://api.openai.com/v1/chat/completions";
 const MODEL = "gpt-3.5-turbo";
-const api_Key = "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";
+const API_KEY = "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";
 
 /*
     ----------------------
@@ -26,15 +26,18 @@ async function sendMessageToChatbot(message) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${api_Key}`,
+            Authorization: `Bearer ${API_KEY}`,
         },
         body: JSON.stringify({
             model: MODEL,
             messages: [{ role: "user", content: message }],
+            temperature: 0.9,
+            max_tokens: 150,
         }),
     });
 
     const data = await response.json();
+    console.log("API Response:", data);
     return data.choices[0].message.content;
 }
 
