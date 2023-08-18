@@ -19,10 +19,6 @@ without storage or database. just a simple chat bot.
 
 Contributions, issues and feature requests are welcome! 🤠
 
-## Site URL
-
-[Live Demo Link] (https://chatbot-openai-api-try.netlify.app/)
-
 ## Screenshot
 
 ![screenshot](/images/Screenshot.png)
