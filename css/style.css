@@ -1,0 +1,718 @@
+/*------------------------------------*\
+    CSS RESET
+\*------------------------------------*/
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --font-size: 1rem;
+    --font-weight: 400;
+
+    --color-primary: #5e5a5e;
+    --color-secondary: #393f82;
+    --color-tertiary: #ffa434;
+
+    --color-text: #c5cfd6;
+
+    --scroll-behavior: smooth;
+
+    --transition: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: var(--scroll-behavior);
+    background-color: var(--color-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    color: var(--color-text);
+}
+
+body {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-text);
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--color-text);
+    color: var(--color-primary);
+}
+
+/*------------------------------------*\
+    CSS GENERAL
+\*------------------------------------*/
+
+/*------------------------------------*\
+    HEADER
+\*------------------------------------*/
+header {
+    height: 3.125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+}
+
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+
+/*------------------------------------*\
+    HERO
+\*------------------------------------*/
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/*------------------------------------*\
+    CHAT
+\*------------------------------------*/
+.chat-container {
+    max-width: 50rem;
+    margin: 0 auto;
+    border: 1px solid var(--color-text);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.chat {
+    padding: 1.25rem;
+    max-height: 31.25rem;
+    overflow-y: auto;
+    overflow-y: smooth;
+}
+
+.chat .message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.chat .message .message-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-avatar,
+.bot-avatar {
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-tertiary);
+    overflow: hidden;
+}
+
+.user-avatar img,
+.bot-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-avatar {
+    margin-left: auto;
+}
+
+.bot-avatar {
+    margin-right: auto;
+}
+
+.user-message,
+.bot-message {
+    background-color: var(--color-text);
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.user-message {
+    margin-left: auto;
+    color: var(--color-primary);
+}
+
+.bot-message {
+    margin-right: auto;
+    color: var(--color-primary)
+}
+
+.input-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--color-text);
+}
+
+.input-area input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.input-area button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#send-button {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+/*------------------------------------*\
+    ABOUT
+\*------------------------------------*/
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.about-text p {
+    text-align: center;
+}
+
+/*------------------------------------*\
+    FAQ
+\*------------------------------------*/
+.faq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.faq-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.faq-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.faq-text p {
+    text-align: center;
+}
+
+
+/*------------------------------------*\
+    CONTACT
+\*------------------------------------*/
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/*------------------------------------*\
+    FOOTER
+\*------------------------------------*/
+footer {
+    width: 100%;
+    height: 3.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* ------------------------------------*\
+    MEDIA QUERIES
+\*------------------------------------*/
+
+/*------------------------------------*\
+    MOBILE
+\*------------------------------------*/
+@media screen and (min-width: 320px) and (max-width: 500px) {
+   .hero, 
+    .about {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .chat-container {
+        max-width: 100%;
+    }
+
+    .chat {
+        max-height: 20rem;
+    }
+
+    .chat .message .message-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .user-avatar,
+    .bot-avatar {
+        width: 3.125rem;
+        height: 3.125rem;
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 100%;
+    }
+
+    .input-area {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .input-area input {
+        max-width: 100%;
+        text-align: center;
+    }
+
+
+    .input-area button {
+        max-width: 100%;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .faq-text {
+        text-align: center;
+    }
+
+    .contact-text {
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/*------------------------------------*\
+    TABLET
+\*------------------------------------*/
+@media screen and (min-width: 501px) and (max-width: 768px) {
+    .hero, 
+    .about {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .chat-container {
+        max-width: 30rem;
+    }
+
+    .chat {
+        max-height: 20rem;
+    }
+
+    .chat .message .message-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .user-avatar,
+    .bot-avatar {
+        width: 3.125rem;
+        height: 3.125rem;
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 100%;
+    }
+
+    .input-area {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .input-area input {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .input-area button {
+        max-width: 100%;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .faq-text {
+        text-align: center;
+    }
+
+    .contact-text {
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/*------------------------------------*\
+    DESKTOP
+\*------------------------------------*/
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .hero, 
+    .about {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .chat-container {
+        max-width: 50rem;
+    }
+
+    .chat {
+        max-height: 20rem;
+    }
+
+    .chat .message .message-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .user-avatar,
+    .bot-avatar {
+        width: 3.125rem;
+        height: 3.125rem;
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 100%;
+    }
+
+    .input-area {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .input-area input {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .input-area button {
+        max-width: 100%;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .faq-text {
+        text-align: center;
+    }
+
+    .contact-text {
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/*------------------------------------*\
+    LARGE DESKTOP
+\*------------------------------------*/
+@media screen and (min-width: 1025px) {
+    .hero, 
+    .about {
+        flex-direction: row;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    .chat-container {
+        max-width: 50rem;
+    }
+
+    .chat {
+        max-height: 20rem;
+    }
+
+    .chat .message .message-content {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .user-avatar,
+    .bot-avatar {
+        width: 4.375rem;
+        height: 4.375rem;
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 70%;
+    }
+
+    .input-area {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .input-area input {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .input-area button {
+        max-width: 100%;
+    }
+
+    .about-text {
+        text-align: left;
+    }
+
+    .faq-text {
+        text-align: left;
+    }
+
+    .contact-text {
+        text-align: left;
+    }
+
+    footer {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+/*------------------------------------*\
+    EXTRA LARGE DESKTOP
+\*------------------------------------*/
+@media screen and (min-width: 1200px) {
+    .hero, 
+    .about {
+        flex-direction: row;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    .chat-container {
+        max-width: 50rem;
+    }
+
+    .chat {
+        max-height: 20rem;
+    }
+
+    .chat .message .message-content {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .user-avatar,
+    .bot-avatar {
+        width: 4.375rem;
+        height: 4.375rem;
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 70%;
+    }
+
+    .input-area {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .input-area input {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .input-area button {
+        max-width: 100%;
+    }
+
+    .about-text {
+        text-align: left;
+    }
+
+    .faq-text {
+        text-align: left;
+    }
+
+    .contact-text {
+        text-align: left;
+    }
+
+    footer {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+/*------------------------------------*\
+    print
+\*------------------------------------*/
+@media print {
+    .header-title {
+        display: none;
+    }
+
+    .chat-container {
+        display: none;
+    }
+
+    .about {
+        display: none;
+    }
+
+    .faq {
+        display: none;
+    }
+
+    .contact {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+}
